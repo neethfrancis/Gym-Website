@@ -1,0 +1,129 @@
+#works {
+    min-height: calc(100vh - 4rem);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+}
+
+.worksTitle {
+    margin: 1rem 0;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.worksDesc {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+    flex-wrap: wrap; /* Ensure columns wrap on smaller screens */
+}
+
+.container {
+    width: 300px; /* Adjusted container width */
+    margin: 10px;
+    perspective: 1000px;
+}
+
+.card {
+    width: 80%; /* Card width now matches the container */
+    height: 200px;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 2rem; */
+    box-shadow: 5px 5px 5px black;
+    border: 1px solid #eae0d5;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front {
+    background-color: #fff;
+}
+
+.back {
+    background-color: rgb(188, 184, 184);
+    gap: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    transform: rotateY(180deg);
+    color: black;
+}
+
+.container:hover > .card {
+    transform: rotateY(180deg);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .worksTitle {
+        font-size: 2.5rem;
+    }
+
+    .column {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center;
+    }
+
+    .container {
+        width: 90%; /* Adjust container width */
+    }
+
+    .card {
+        height: 250px;
+    }
+
+    .front, .back {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .worksTitle {
+        font-size: 2rem;
+    }
+
+    .container {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .card {
+        height: 200px;
+    }
+
+    .front, .back {
+        padding: 1rem;
+    }
+}
+
+.img1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area */
+    display: flex;
+}

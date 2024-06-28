@@ -1,0 +1,69 @@
+.statistics-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(188, 184, 184);
+  padding: 25px;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.statistic {
+  text-align: center;
+  color: #000;
+  flex: 1 1 200px; /* Flex items with minimum width */
+  margin: 10px; /* Add margin for spacing between items */
+}
+
+.statistic h2 {
+  font-size: 3em;
+  margin: 0;
+  animation: countUp 1.5s ease-in-out;
+}
+
+.statistic p {
+  font-size: 1em;
+  margin: 0;
+  color: #000;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .statistics-container {
+    flex-direction: column;
+    /* align-items: center; */
+  }
+
+  .statistic {
+    flex: 1 1 100%; /* Flex items take full width */
+    margin-bottom: 20px; /* Add space between items */
+  }
+
+  .statistic h2 {
+    font-size: 2.5em;
+  }
+
+  .statistic p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .statistic h2 {
+    font-size: 2em;
+  }
+
+  .statistic p {
+    font-size: 0.8em;
+  }
+}
